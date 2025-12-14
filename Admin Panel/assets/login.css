@@ -1,0 +1,820 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    height: 100vh;
+    background: url(./images/slide\ 10.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    width: 800px;
+    height: 500px;
+    background: #0a192f;
+    display: flex;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(7, 251, 255, 0.922);
+    animation: containerFloat 3s ease-in-out infinite;
+}
+
+@keyframes containerFloat {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.left {
+    width: 50%;
+    background: linear-gradient(135deg, #64ffda, #03226e);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    color: #0a192f;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.left h1 {
+    font-size: 45px;
+    margin: 0 0 10px 0;
+    position: relative;
+    color: rgb(10, 226, 226);
+    z-index: 2;
+    animation: fadeInDown 1s ease-out;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.995);
+}
+
+@keyframes titleSlide {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.left p {
+    margin-top: 10px;
+    font-size: 17px;
+    position: relative;
+    color: #eef1f6;
+    z-index: 2;
+    animation: fadeInUp 1s ease-out 0.3s both;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.995);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Electrical Lab Animation Elements */
+.circuit-line {
+    position: absolute;
+    background: rgba(100, 255, 218, 0.7);
+}
+
+.circuit-line.horizontal {
+    width: 100%;
+    height: 2px;
+    animation: pulseHorizontal 4s linear infinite;
+}
+
+.circuit-line.vertical {
+    height: 100%;
+    width: 2px;
+    animation: pulseVertical 4s linear infinite;
+}
+
+@keyframes pulseHorizontal {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes pulseVertical {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+.electron {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #64ffda;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #64ffda;
+    animation: electronMove 3s linear infinite;
+}
+
+@keyframes electronMove {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(100px, 50px);
+    }
+
+    50% {
+        transform: translate(50px, 100px);
+    }
+
+    75% {
+        transform: translate(-50px, 50px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.resistor {
+    position: absolute;
+    width: 40px;
+    height: 15px;
+    background: #ffb347;
+    border-radius: 4px;
+    animation: rotateResistor 8s linear infinite;
+}
+
+@keyframes rotateResistor {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.capacitor {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border: 3px solid #64ffda;
+    border-radius: 50%;
+    animation: pulseCapacitor 2s ease-in-out infinite;
+}
+
+@keyframes pulseCapacitor {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+.led {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #ff4d4d;
+    border-radius: 50%;
+    animation: blinkLed 1.5s ease-in-out infinite;
+}
+
+@keyframes blinkLed {
+
+    0%,
+    100% {
+        opacity: 1;
+        box-shadow: 0 0 15px #ff4d4d;
+    }
+
+    50% {
+        opacity: 0.3;
+        box-shadow: 0 0 5px #ff4d4d;
+    }
+}
+
+.right {
+    width: 50%;
+    background: #112240;
+    padding: 40px;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.right:hover {
+    background: #112250;
+}
+
+.right h2 {
+    text-align: center;
+    color: #64ffda;
+    margin-bottom: 20px;
+    animation: slideInRight 1s ease-out;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: #1d3557;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
+    border: 2px solid #64ffda;
+}
+
+button {
+    width: 90%;
+    padding: 12px;
+    margin-top: 15px;
+    margin-left: 25px;
+    border-radius: 25px;
+    border: 2px solid rgb(2, 66, 82);
+    background: #03c5d6;
+    font-size: 20px;
+    color: #043583b8;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: buttonPulse 2s ease-in-out infinite;
+        box-shadow: 0 0 20px rgba(7, 251, 255, 0.686);
+}
+
+@keyframes buttonPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+button:hover {
+    background: #52e0c4;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(100, 255, 218, 0.4);
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-top: 5px;
+    animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.options a {
+    color: #64ffda;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.options a:hover {
+    transform: translateX(3px);
+    text-shadow: 0 0 8px rgba(100, 255, 218, 0.7);
+}
+
+.signup {
+    text-align: center;
+    margin-top: 20px;
+    animation: fadeInUp 1s ease-out 0.7s both;
+}
+
+.signup a {
+    color: #64ffda;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.signup a:hover {
+    transform: translateX(3px);
+    text-shadow: 0 0 8px rgba(100, 255, 218, 0.7);
+}
+
+.error {
+    background: #ff4d4d;
+    padding: 8px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+}
+
+/* Electrical lab floating equipment */
+.lab-equipment {
+    position: absolute;
+    font-size: 20px;
+    color: rgba(100, 255, 218, 0.8);
+    animation: floatEquipment 6s ease-in-out infinite;
+}
+
+@keyframes floatEquipment {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(20px, -15px) rotate(10deg);
+    }
+
+    50% {
+        transform: translate(10px, -25px) rotate(0deg);
+    }
+
+    75% {
+        transform: translate(-15px, -10px) rotate(-10deg);
+    }
+}
+/* Add these styles to your CSS file */
+
+.resistor {
+    position: absolute;
+    width: 40px;
+    height: 15px;
+    background: #ffb347;
+    border-radius: 4px;
+    transform: rotate(var(--rotation));
+    box-shadow: 0 0 8px rgba(255, 179, 71, 0.7);
+    z-index: 2;
+}
+
+.capacitor {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 3px solid #64ffda;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(100, 255, 218, 0.7);
+    z-index: 2;
+}
+
+.led {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #ff4d4d;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #ff4d4d;
+    z-index: 2;
+    animation: ledBlink 2s infinite;
+}
+
+.voltage-text {
+    position: absolute;
+    color: #64ffda;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 2;
+}
+
+/* Animation keyframes */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(var(--rotation));
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(var(--rotation));
+    }
+}
+
+@keyframes rotateSlow {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes ledBlink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+}
+
+/* Make sure left section has relative positioning for absolute children */
+.left {
+    position: relative;
+}
+
+/* Electrical Lab Components */
+.resistor {
+    position: absolute;
+    width: 40px;
+    height: 15px;
+    background: #ffb347;
+    border-radius: 4px;
+    transform: rotate(var(--rotation));
+    box-shadow: 0 0 8px rgba(255, 179, 71, 0.7);
+    z-index: 2;
+}
+
+.capacitor {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 3px solid #64ffda;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(100, 255, 218, 0.7);
+    z-index: 2;
+}
+
+.led {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #ff4d4d;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #ff4d4d;
+    z-index: 2;
+    animation: ledBlink 2s infinite;
+}
+
+.voltage-text {
+    position: absolute;
+    color: #64ffda;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.lab-equipment {
+    position: absolute;
+    font-size: 24px;
+    color: rgba(100, 255, 218, 0.8);
+    z-index: 2;
+}
+
+/* Keyframe Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-5px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(5px);
+    }
+}
+
+@keyframes ledBlink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+}
+
+@keyframes electronMove {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+
+    100% {
+        transform: translateX(var(--end-x)) translateY(var(--end-y));
+    }
+}
+
+@keyframes rotateSlow {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(var(--rotation));
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(var(--rotation));
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .container {
+        width: 95%;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .left,
+    .right {
+        width: 100%;
+    }
+
+    .left {
+        height: 250px;
+    }
+}
+/* Add these styles at the end of your login.css file */
+
+/* Electrical Lab Animation Elements */
+.circuit-board {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.circuit-line {
+    position: absolute;
+    background: rgba(100, 255, 218, 0.7);
+    border-radius: 2px;
+}
+
+.circuit-line.horizontal {
+    width: 100%;
+    height: 2px;
+    animation: pulseHorizontal 4s linear infinite;
+}
+
+.circuit-line.vertical {
+    height: 100%;
+    width: 2px;
+    animation: pulseVertical 4s linear infinite;
+}
+
+.electron {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #64ffda;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #64ffda;
+    z-index: 2;
+}
+
+.resistor {
+    position: absolute;
+    width: 40px;
+    height: 15px;
+    background: #ffb347;
+    border-radius: 4px;
+    transform: rotate(var(--rotation));
+    box-shadow: 0 0 8px rgba(255, 179, 71, 0.7);
+    z-index: 2;
+}
+
+.capacitor {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 3px solid #64ffda;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(100, 255, 218, 0.7);
+    z-index: 2;
+}
+
+.led {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #ff4d4d;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #ff4d4d;
+    z-index: 2;
+    animation: ledBlink 2s infinite;
+}
+
+.voltage-text {
+    position: absolute;
+    color: #64ffda;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.lab-equipment {
+    position: absolute;
+    font-size: 24px;
+    color: rgba(100, 255, 218, 0.8);
+    z-index: 2;
+}
+
+/* Keyframe Animations */
+@keyframes pulseHorizontal {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes pulseVertical {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+@keyframes electronMove {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+
+    100% {
+        transform: translateX(var(--end-x)) translateY(var(--end-y));
+    }
+}
+
+@keyframes ledBlink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+}
+
+@keyframes rotateSlow {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(var(--rotation));
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(var(--rotation));
+    }
+}
+
+/* Make sure left section has proper positioning */
+.left {
+    position: relative;
+    overflow: hidden;
+}
